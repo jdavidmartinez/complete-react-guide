@@ -1,10 +1,14 @@
-import React, { Component } from 'react';
-import './App.css';
-import Person from './Person/Person';
-import UserInput from './UserInput/UserInput';
-import UserOutput from './UserOutput/UserOutput';
+import React, { Component } from "react";
+import "./App.css";
+import Person from "./Person/Person";
+import UserInput from "./UserInput/UserInput";
+import UserOutput from "./UserOutput/UserOutput";
 
 class App extends Component {
+  state = {
+    persons: [{ name: "parcerito" }, { name: "Talita" }],
+  };
+
   render() {
     return (
       <div className="App">
@@ -12,9 +16,8 @@ class App extends Component {
         <p>This is really Working!</p>
         <Person />
         <UserInput />
-        <UserOutput userName ="Pepito"/>
-        <UserOutput userName="Fulana" />
-      
+        <UserOutput name={this.state.persons[0].name} />
+        <UserOutput name={this.state.persons[1].name} />
       </div>
     );
   }
