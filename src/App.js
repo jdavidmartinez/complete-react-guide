@@ -6,8 +6,15 @@ import UserOutput from "./UserOutput/UserOutput";
 
 class App extends Component {
   state = {
-    persons: [{ name: "parcerito" }, { name: "Talita" }],
+    persons: [{ name: "Oliveiro" }, { name: "Maga" }],
   };
+
+  handlerEventHandler=()=>{
+    //console.log("Was clicked")
+    this.setState({
+      persons: [{ name: "Manu" }, { name: "Talita" }]
+    })
+  }
 
   render() {
     return (
@@ -16,6 +23,7 @@ class App extends Component {
         <p>This is really Working!</p>
         <Person />
         <UserInput />
+        <button onClick={this.handlerEventHandler}>Handler Event</button>
         <UserOutput name={this.state.persons[0].name} />
         <UserOutput name={this.state.persons[1].name} />
       </div>
