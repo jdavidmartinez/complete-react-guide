@@ -1,11 +1,13 @@
 import React from 'react';
 
 
-const userInput = () => {
+const userInput = (props) => {
     return (
         <div>
             <p>User Input</p>
-            <input placeholder="Write your text here"></input>
+            <input placeholder="Write your text here"
+                    onChange={props.changed}
+            ></input>
             
         </div>
     )

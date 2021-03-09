@@ -13,6 +13,11 @@ class App extends Component {
       persons: [{ name: newName }, { name: "Talita" }],
     });
   };
+  nameInputHandler = (event) => {
+    this.setState({
+      persons: [{ name: event.target.value }, { name: "Talita" }],
+    });
+  };
 
   render() {
     return (
@@ -20,11 +25,13 @@ class App extends Component {
         <h1>Hi, this is a react App</h1>
         
         
-        <UserInput />
+        <UserInput  changed={this.nameInputHandler}/>
         <button onClick={this.handlerEventHandler.bind(this, 'Andres')}>Handler Event</button>
         <UserOutput 
         name={this.state.persons[0].name} 
         click={this.handlerEventHandler.bind(this,'juan')}
+        
+              
         />
         <UserOutput 
         name={this.state.persons[1].name}

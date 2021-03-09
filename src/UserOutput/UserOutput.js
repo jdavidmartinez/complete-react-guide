@@ -1,9 +1,11 @@
 import React from 'react';
 
+import './UserOutput.css'
+
 
 const userOutput = (props) => {
     return (
-        <div>
+        <div className="UserOutput">
             <h1>{props.name}</h1>
             <p onClick={props.click} className="text">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
