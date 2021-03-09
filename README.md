@@ -144,7 +144,8 @@ my-app/
     index.js
     logo.svg
 ```
-
+For runnin the project, ***you should instal next commands**
+  npm install react react-dom --save
 For the project to build, **these files must exist with exact filenames**:
 
 * `public/index.html` is the page template;

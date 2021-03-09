@@ -6,6 +6,7 @@ const userInput = () => {
         <div>
             <p>User Input</p>
             <input placeholder="Write your text here"></input>
+            
         </div>
     )
 }

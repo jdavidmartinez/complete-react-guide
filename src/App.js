@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./App.css";
-import Person from "./Person/Person";
 import UserInput from "./UserInput/UserInput";
 import UserOutput from "./UserOutput/UserOutput";
 
@@ -9,23 +8,27 @@ class App extends Component {
     persons: [{ name: "Oliveiro" }, { name: "Maga" }],
   };
 
-  handlerEventHandler=()=>{
-    //console.log("Was clicked")
+  handlerEventHandler = (newName) => {
     this.setState({
-      persons: [{ name: "Manu" }, { name: "Talita" }]
-    })
-  }
+      persons: [{ name: newName }, { name: "Talita" }],
+    });
+  };
 
   render() {
     return (
       <div className="App">
         <h1>Hi, this is a react App</h1>
-        <p>This is really Working!</p>
-        <Person />
+        
+        
         <UserInput />
-        <button onClick={this.handlerEventHandler}>Handler Event</button>
-        <UserOutput name={this.state.persons[0].name} />
-        <UserOutput name={this.state.persons[1].name} />
+        <button onClick={this.handlerEventHandler.bind(this, 'Andres')}>Handler Event</button>
+        <UserOutput 
+        name={this.state.persons[0].name} 
+        click={this.handlerEventHandler.bind(this,'juan')}
+        />
+        <UserOutput 
+        name={this.state.persons[1].name}
+         />
       </div>
     );
   }
